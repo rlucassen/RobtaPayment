@@ -1,0 +1,40 @@
+﻿<h1>Inschrijvingen beheren</h1>
+<% if ?activity: %>
+  <p>Alle bijdragen voor contributie voor: <strong>${contribution.ListName}</strong><br />Toon <a href="index">alle bijdragen</a></p>
+<% end %>
+<table id="enrolments" class="table table-striped">
+	<thead>
+		<tr>
+			<th>Naam</th>
+			<th>Email</th>
+			<th>Studentnummer</th>
+			<th>Bijdrage</th>
+			<th>Betaaldatum</th>
+			<th>Acties</th>
+		</tr>
+	</thead>
+	<tbody>
+    <% for enrolment in enrolments: %>
+		<tr>
+			<td>${enrolment.Name}</td>
+      <td>${enrolment.Email}</td>
+      <td>${enrolment.StudentNumber}</td>
+      <td><a href="index?contribution=${enrolment.Contribution.Id}">${enrolment.Contribution.ListName}</a>
+      </td>
+      <td>${enrolment.EnrolmentDate.ToString("yyyy-MM-dd")}</td>
+		   <td>
+		      <a href="edit?id=${enrolment.Id}" class="btn btn-primary btn-mini">Bewerken</a>
+  		      <% if CurrentUser.IsInRole("Admin") : %>
+		      <a href="delete?id=${enrolment.Id}" class="btn btn-danger btn-mini delete-button">Verwijderen</a>
+            <% end %>   
+		   </td>
+		</tr>
+    <% end %>
+	</tbody>
+</table>
+
+<div class="form-actions">
+   <% if CurrentUser.IsInRole("Admin") : %>
+   <a href="/Admin/ContributionEnrolments/new" class="btn btn-success">Nieuw</a>
+   <% end %>   
+</div>

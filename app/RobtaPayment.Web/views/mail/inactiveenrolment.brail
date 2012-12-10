@@ -1,0 +1,16 @@
+﻿Er is een inschrijving die na betaling niet meer actief gemaakt kon worden. Het betaalde bedrag moet teruggestort worden of er moet een alternatief aangeboden worden.
+
+Type: ${enrolment.GetType().Name}
+Naam: ${enrolment.Name}
+Studentnummer: ${enrolment.StudentNumber}
+Email: ${enrolment.Email}
+TransactieID: ${enrolment.Transaction.TransactionId}
+
+Bekijk de inschrijving:
+http://reserveringen.RobtaPayment.nl${enrolment.Url()}
+
+Met vriendelijke groet,
+Stichting Grafisch Lyceum Rotterdam
+Inschrijvingssysteem
+
+Ps. Deze email is automatisch gegenereerd door het inschrijvingssysteem.

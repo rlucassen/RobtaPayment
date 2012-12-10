@@ -1,0 +1,10 @@
+﻿<h1>Kluisje huren</h1>
+<p>Kies de locatie waar je een kluisje wil huren</p>
+<% for building in buildings: %>
+  <h2>${building.Name}</h2>
+  <ul>
+  <% for lockerblock in building.LockerBlocks: %>
+    <li><a href="/Locker/LockerBlock?id=${lockerblock.Id}">${lockerblock.Name}</a></li>
+  <% end %>
+  </ul>
+<% end %>

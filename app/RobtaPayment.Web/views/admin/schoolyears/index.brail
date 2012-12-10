@@ -1,0 +1,32 @@
+﻿<h1>Schooljaren beheren</h1>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Schooljaar</th>
+			<th>Start inschrijvingen</th>
+			<th>Eind inschrijvingen</th>
+			<th>Acties</th>
+		</tr>
+	</thead>
+	<tbody>
+    <% for schoolyear in schoolyears: %>
+		<tr>
+			<td>${schoolyear.Name}</td>
+			<td>${schoolyear.SchoolYearStart.ToString("yyyy-MM-dd")}</td>
+			<td>${schoolyear.SchoolYearEnd.ToString("yyyy-MM-dd")}</td>
+		   <td>
+		      <a href="/Admin/SchoolYears/edit?id=${schoolyear.Id}" class="btn btn-primary btn-mini">Bewerken</a>
+		      <% if CurrentUser.IsInRole("Admin") : %>
+		      <a href="/Admin/SchoolYears/delete?id=${schoolyear.Id}" class="btn btn-danger btn-mini delete-button">Verwijderen</a>
+            <% end %>                  
+		   </td>
+		</tr>
+    <% end %>
+	</tbody>
+</table>
+
+<div class="form-actions">
+   <% if CurrentUser.IsInRole("Admin") : %>
+   <a href="/Admin/SchoolYears/new" class="btn btn-success">Nieuw</a>
+   <% end %>         
+</div>

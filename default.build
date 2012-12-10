@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Package">
+
+  <PropertyGroup>
+    <Configuration>Release</Configuration>
+    <OutputDir>Artifacts</OutputDir>      
+  </PropertyGroup>
+
+  <ItemGroup>   
+    <Projects Include="app\**\*.build" Exclude="" />    
+  </ItemGroup>
+
+  <Target Name="Clean">
+    <RemoveDir Directories="$(OutputDir)" />
+    <MSBuild Projects="@(Projects)" Targets="Clean" Properties="Configuration=$(Configuration);" />
+  </Target>
+
+  <Target Name="Build">
+    <MSBuild Projects="@(Projects)" Targets="Build" Properties="Configuration=$(Configuration);" />
+  </Target>
+
+  <Target Name="Test">
+    <MSBuild Projects="@(Projects)" Targets="Test" Properties="Configuration=$(Configuration);" />
+  </Target>
+   
+  <Target Name="Package" DependsOnTargets="Clean;Test">
+    <RemoveDir Directories="$(OutputDir)" />
+    <MSBuild Projects="@(Projects)" Targets="Package" Properties="Configuration=$(Configuration);" />
+    <CreateItem Include="**\Artifacts\**\*;**\Artifacts2\**\*">
+      <Output TaskParameter="Include" ItemName="Artifacts" />
+    </CreateItem>
+    <MakeDir Directories="$(OutputDir)" />
+    <Copy SourceFiles="@(Artifacts)" DestinationFolder="$(OutputDir)" />
+  </Target>
+  
+</Project>

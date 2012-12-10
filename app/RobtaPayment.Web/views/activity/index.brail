@@ -1,0 +1,44 @@
+﻿<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Werkweek</th>
+      <th>Aanbetaling</th>
+      <th>Bezetting</th>
+      <th>Vrije plaatsen</th>
+      <th>Acties</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for activity in activities: %>
+    <tr <% if activity.IsOpen == false: %>class="tr-disabled"<% end %>>
+      <td>${activity.Name}</td>
+      <td>&euro; ${activity.downPaymentPrice}</td>
+      <td>
+        <div class="progress progress-info progress-striped">
+            <div class="bar" style="width: ${activity.PercentageBlocked}%;">
+                <% if activity.Enrolments.Count > 0: %>
+                ${activity.Enrolments.Count}
+                <% end %>
+            </div>
+        </div>
+      </td>
+      <td>
+        <% if activity.FreePlaces == 0: %>
+          volgeboekt
+        <% elif activity.FreePlaces == 1: %>
+          ${activity.FreePlaces} plaats vrij
+        <% else: %>
+          ${activity.FreePlaces} plaatsen vrij
+        <% end %>
+      </td>
+      <td>
+        <% if activity.IsOpen == false: %>
+          <a href="/Activity/enrol?activity=${activity.Id}" class="btn btn-mini btn-danger disabled">Gesloten</a>
+        <% else: %>
+          <a href="/Activity/enrol?activity=${activity.Id}" class="btn btn-mini">Inschrijven</a>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

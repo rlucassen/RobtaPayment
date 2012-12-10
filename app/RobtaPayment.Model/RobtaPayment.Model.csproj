@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{974C76C3-5230-4323-BA05-B0238FF03950}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RobtaPayment.Model</RootNamespace>
+    <AssemblyName>RobtaPayment.Model</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.ActiveRecord">
+      <HintPath>..\..\lib\Castle.Facilities.ActiveRecordIntegration-1.1.0\bin\Castle.ActiveRecord.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Components.Validator">
+      <HintPath>..\..\lib\Castle.Facilities.ActiveRecordIntegration-1.1.0\bin\Castle.Components.Validator.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MonoRail.Framework">
+      <HintPath>..\..\lib\Castle.MonoRail-2.0.0\bin\Castle.MonoRail.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MonoRail.Views.Brail">
+      <HintPath>..\..\lib\Castle.MonoRail-2.0.0\bin\Castle.MonoRail.Views.Brail.dll</HintPath>
+    </Reference>
+    <Reference Include="Mollie.iDEAL">
+      <HintPath>..\..\lib\Mollie.iDEAL.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Activity.cs" />
+    <Compile Include="Entities\ActivityEnrolment.cs" />
+    <Compile Include="Entities\Building.cs" />
+    <Compile Include="Entities\BicycleRack.cs" />
+    <Compile Include="Entities\BicycleRackEnrolment.cs" />
+    <Compile Include="Entities\ContributionEnrolment.cs" />
+    <Compile Include="Entities\Contribution.cs" />
+    <Compile Include="Entities\Education.cs" />
+    <Compile Include="Entities\Exam.cs" />
+    <Compile Include="Entities\ExamEnrolment.cs" />
+    <Compile Include="Entities\Fields\Field.cs" />
+    <Compile Include="Entities\Fields\StringField.cs" />
+    <Compile Include="Entities\Project.cs" />
+    <Compile Include="Enums\ContributionType.cs" />
+    <Compile Include="Entities\Enrolment.cs" />
+    <Compile Include="Entities\IEnrolment.cs" />
+    <Compile Include="Entities\Locker.cs" />
+    <Compile Include="Entities\LockerBlock.cs" />
+    <Compile Include="Entities\LockerEnrolment.cs" />
+    <Compile Include="Entities\ModelBase.cs" />
+    <Compile Include="Entities\SchoolYear.cs" />
+    <Compile Include="Entities\Transaction.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Enums\AccountType.cs" />
+    <Compile Include="Enums\BicycleRackEnrolmentStatus.cs" />
+    <Compile Include="Helpers\CsvHelper.cs" />
+    <Compile Include="Helpers\ContributionTypeTranslator.cs" />
+    <Compile Include="Helpers\InvoiceHelper.cs" />
+    <Compile Include="Interfaces\ITransaction.cs" />
+    <Compile Include="Helpers\MollieIdealHelper.cs" />
+    <Compile Include="Helpers\PasswordHelper.cs" />
+    <Compile Include="Interfaces\IUser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

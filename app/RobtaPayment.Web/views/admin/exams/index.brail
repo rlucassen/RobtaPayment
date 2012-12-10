@@ -1,0 +1,35 @@
+﻿<h1>Toetsen beheren</h1>
+<table class="table table-striped">
+   <thead>
+      <tr>
+         <th>Toets</th>
+         <th>Prijs</th>
+         <th>Verloop datum</th>
+         <th>Acties</th>
+      </tr>
+   </thead>
+   <tbody>
+      <% for exam in exams: %>
+      <tr>
+         <td>${exam.Name}</td>
+         <td>&euro; ${exam.Price}</td>
+         <td>${exam.ExpirationDate}</td>
+         <td>
+            <a href="/Admin/Exams/edit?id=${exam.Id}" class="btn btn-primary btn-mini">Bewerken</a>
+            <% if CurrentUser.IsInRole("Admin") : %>
+            <a href="/Admin/Exams/delete?id=${exam.Id}" class="btn btn-danger btn-mini delete-button">Verwijderen</a>
+            <% end %>
+            <a href="/Admin/ExamEnrolments/index?exam=${exam.Id}" class="btn btn-mini">Inschrijvingen</a>
+            <a href="/Admin/Exams/csv?id=${exam.Id}" class="btn btn-warning btn-mini">CSV downloaden</a>
+            <a href="/Admin/Exams/presence?id=${exam.Id}" class="btn btn-success btn-mini">Presentielijst</a>
+         </td>
+      </tr>
+      <% end %>
+   </tbody>
+</table>
+
+<div class="form-actions">
+   <% if CurrentUser.IsInRole("Admin") : %>
+   <a href="/Admin/Exams/new" class="btn btn-success">Nieuw</a>
+   <% end %>
+</div>

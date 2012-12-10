@@ -1,0 +1,5 @@
+﻿<h1>Welkom in het inschrijvingssysteem van het RobtaPayment</h1>
+<p><a href="/Locker/index" class="btn btn-large">Kluisjes reserveren</a></p>
+<p><a href="/Bicycle/index" class="btn btn-large">Fietsenstallingen reserveren</a></p>
+<p><a href="/Activity/index" class="btn btn-large">Inschrijven voor werkweken</a></p>
+<p><a href="/Exam/index" class="btn btn-large">Inschrijven voor intaketoetsen</a></p>

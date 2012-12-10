@@ -1,0 +1,81 @@
+﻿<div class="control-group">
+  ${Form.LabelFor("enrolment.Name", "Voornaam student", {"class":"control-label"})}
+  <div class="controls">
+    ${Form.TextField("enrolment.Name", {"class":"input-xlarge"})}
+    <!--p class="help-block">Supporting help text</p-->
+	</div>
+</div>
+<div class="control-group">
+  ${Form.LabelFor("enrolment.Preposition", "Tussenvoegsel student", {"class":"control-label"})}
+  <div class="controls">
+    ${Form.TextField("enrolment.Preposition", {"class":"input-xlarge"})}
+    <!--p class="help-block">Supporting help text</p-->
+	</div>
+</div>
+<div class="control-group">
+  ${Form.LabelFor("enrolment.Lastname", "Achternaam student", {"class":"control-label"})}
+  <div class="controls">
+    ${Form.TextField("enrolment.Lastname", {"class":"input-xlarge"})}
+    <!--p class="help-block">Supporting help text</p-->
+	</div>
+</div>
+<div class="control-group">
+  ${Form.LabelFor("enrolment.Email", "Email", {"class":"control-label"})}
+  <div class="controls">
+    ${Form.TextField("enrolment.Email", {"class":"input-xlarge"})}
+    <!--p class="help-block">Supporting help text</p-->
+  </div>
+</div>
+<div class="control-group">
+  ${Form.LabelFor("enrolment.Address", "Adres student", {"class":"control-label"})}
+  <div class="controls">
+    ${Form.TextField("enrolment.Address", {"class":"input-xlarge"})}
+    <!--p class="help-block">Supporting help text</p-->
+	</div>
+</div>
+<div class="control-group">
+  ${Form.LabelFor("enrolment.Place", "Woonplaats student", {"class":"control-label"})}
+  <div class="controls">
+    ${Form.TextField("enrolment.Place", {"class":"input-xlarge"})}
+    <!--p class="help-block">Supporting help text</p-->
+	</div>
+</div>
+<div class="control-group">
+	${Form.LabelFor("enrolment.EnrolmentDate", "Inschrijfdatum", {"class":"control-label"})}
+	<div class="controls">
+    ${Form.TextFieldValue("enrolment.EnrolmentDate", enrolment.EnrolmentDate.ToString("yyyy-MM-dd"), {"class":"input-xlarge", "data-datepicker":"datepicker"})}
+    <!--p class="help-block">Supporting help text</p-->
+	</div>
+</div>
+<div class="control-group">
+  ${Form.LabelFor("enrolment.Exam", "Exam", {"class":"control-label"})}
+  <div class="controls">
+    ${Form.Select("enrolment.Exam.Id", exams, {"value":"Id", "text":"Name"})}
+  </div>
+</div>
+<div class="control-group">
+  ${Form.LabelFor("enrolment.Education", "Opleiding", {"class":"control-label"})}
+  <div class="controls">
+    ${Form.Select("enrolment.Education.Id", educations, {"value":"Id", "text":"Name", "firstoption":""})}
+    <p class="help-block">Alleen nodig bij AMN toetsen</p>
+  </div>
+</div>
+<% if enrolment.Id != 0: %>
+  <div class="control-group">
+    ${Form.LabelFor("enrolment.Transaction.Payed", "Betaald", {"class":"control-label"})}
+    <div class="controls payed">
+      <% if enrolment.Transaction != null and enrolment.Transaction.Payed: %>
+      <p><i class="icon-ok"></i> Ja</p>
+      <% else: %>
+      <p><i class="icon-remove"></i> Nee</p>
+      <a href="/Admin/ExamEnrolments/SetPayed?id=${enrolment.Id}" class="btn btn-success">Zet op betaald</a>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+
+
+
+
+

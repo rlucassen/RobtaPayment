@@ -1,0 +1,12 @@
+﻿<h2>Nieuw kluizenblok</h2>
+<div id="form">
+  ${Form.FormTag({@action: 'Create', "immediate":'true', "useLabels":'true', "class":'form-horizontal'})}
+  <fieldset>
+	<%OutputSubView("_lockerblock") %>
+	<div class="form-actions">
+    ${Form.Submit("Kluizenblok opslaan", {@class:'btn btn-primary'})}
+    <a href="index" class="btn">Annuleren</a>
+  </div>
+  </fieldset>
+${Form.EndFormTag()}
+</div>

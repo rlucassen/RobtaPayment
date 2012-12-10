@@ -1,0 +1,12 @@
+﻿<div class="control-group">
+	${Form.LabelFor("building.Name", "Naam", {"class":"control-label"})}
+	<div class="controls">
+    ${Form.TextField("building.Name", {"class":"input-xlarge"})}
+  </div>
+</div>
+<div class="control-group">
+	${Form.LabelFor("building.Slug", "Slug", {"class":"control-label"})}
+	<div class="controls">
+    ${Form.TextField("building.Slug", {"class":"input-xlarge"})}
+  </div>
+</div>

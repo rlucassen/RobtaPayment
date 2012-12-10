@@ -1,0 +1,45 @@
+﻿<script type="text/javascript" src="/Content/Javascript/jquery-1.7.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="${cssFile}"/>
+<body class="invoice">
+  <div class="header clearfix">
+    <img src="http://reserveringen.RobtaPayment.nl/content/images/logo.png"/>
+    <h1>Factuur</h1>
+  </div>
+  <div class="sender">
+    Grafisch Lyceum Rotterdam<br/>
+    Heer Bokelweg 255<br/>
+    3032 AD Rotterdam
+  </div>
+  <div class="receiver">
+    Datum: ${enrolment.EnrolmentDate.ToString("dd-MM-yyyy")}<br/>
+    <br/>
+    <br/>
+    ${enrolment.Name}<br/>
+    Studentnummer: ${enrolment.StudentNumber}
+  </div>
+  <div class="content">
+    <table>
+      <thead>
+        <tr>
+          <th>Omschrijving</th>
+          <th>Bedrag</th>
+          <th>Voldaan</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Schoolbijdrage voor ${enrolment.Contribution.ListName}</td>
+          <td>&euro; ${enrolment.Contribution.Price.ToString("00.00")}</td>
+          <td>JA</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Totaal</td>
+          <td>&euro; ${enrolment.Contribution.Price.ToString("00.00")}</td>
+          <td>JA</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</body>

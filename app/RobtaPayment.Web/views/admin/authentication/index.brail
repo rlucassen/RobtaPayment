@@ -1,0 +1,16 @@
+﻿<h2>Inloggen</h2>
+<% if ?ErrorFlash: %>
+<div class="message_err">
+  <h2>Er is een probleem opgetreden bij het inloggen</h2>
+  <ul>
+    <li>${ErrorFlash}</li>
+  </ul>
+</div>
+<% end %>
+
+<form action="/Admin/Authentication/Login" method="post" class="well form-inline">
+	${FormHelper.TextField("username", {"class":"input-medium", "placeholder":"Gebruikersnaam"})}
+  ${FormHelper.PasswordField("password", {"class":"input-medium", "placeholder":"Wachtwoord"})}
+  ${FormHelper.HiddenField("returnUrl", returnUrl)}
+  <input type="submit" name="submit" value="Login" class="btn">
+</form>

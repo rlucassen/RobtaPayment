@@ -1,0 +1,35 @@
+﻿<h1>Schoolbijdrage betalen</h1>
+<p>
+  Je staat op het punt je schoolbijdrage te betalen met de volgende gegevens:
+</p>
+<p>
+  Naam: <strong>${enrolment.Name}</strong><br/>
+  Email: <strong>${enrolment.Email}</strong><br/>
+  Studentnummer: <strong>${enrolment.StudentNumber}</strong><br/>
+</p>
+<p>
+  De schoolbijdrage voor een ${enrolment.Contribution.ListName} bedraagd <strong>&euro; ${enrolment.Contribution.Price}</strong>
+</p>
+<form action="/Ideal/pay" class="form-horizontal" method="post">
+	<input type="hidden" name="transaction.Id" value="${transaction.Id}"/>
+	<fieldset>
+		<legend>Kies je bank</legend>
+		<div class="control-group">
+			${Form.LabelFor("transaction.BankId", "Bank", {"class":"control-label"})}
+			<div class="controls">
+				<select name="transaction.BankId" class="contentselector" style="float: none;">
+					<% for bank in banks: %>
+					<option value="${bank.Id}">${bank.Name}</option>
+					<% end %>
+				</select>
+			</div>
+		</div>
+		<div class="form-actions">
+			<input class="btn" type="submit" value="Betalen"/>
+		</div>
+	</fieldset>
+</form>
+
+
+
+

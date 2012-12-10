@@ -1,0 +1,18 @@
+﻿<div class="control-group">
+	${Form.LabelFor("schoolyear.Name", "Naam", {"class":"control-label"})}
+	<div class="controls">
+    ${Form.TextField("schoolyear.Name", {"class":"input-xlarge"})}
+	</div>
+</div>
+<div class="control-group">
+  ${Form.LabelFor("schoolyear.SchoolYearStart", "Startdatum voor inschrijvingen", {"class":"control-label"})}
+  <div class="controls">
+    ${Form.TextFieldValue("schoolyear.SchoolYearStart", schoolyear.SchoolYearStart.ToString("yyyy-MM-dd"), {"class":"input-medium", "data-datepicker":"datepicker"})}
+  </div>
+</div>
+<div class="control-group">
+  ${Form.LabelFor("schoolyear.SchoolYearEnd", "Einddatum voor inschrijvingen", {"class":"control-label"})}
+  <div class="controls">
+    ${Form.TextFieldValue("schoolyear.SchoolYearEnd", schoolyear.SchoolYearEnd.ToString("yyyy-MM-dd"), {"class":"input-medium", "data-datepicker":"datepicker"})}
+  </div>
+</div>

@@ -1,0 +1,36 @@
+﻿<h1>Werkweken beheren</h1>
+<table class="table table-striped">
+   <thead>
+      <tr>
+         <th>Activiteit</th>
+         <th>Aanbetaling</th>
+         <th>Aantal plaatsen</th>
+         <th>Vrije plaatsen</th>
+         <th>Acties</th>
+      </tr>
+   </thead>
+   <tbody>
+      <% for activity in activities: %>
+      <tr>
+         <td>${activity.Name}</td>
+         <td>&euro; ${activity.downPaymentPrice}</td>
+         <td>${activity.maximumEnrolments}</td>
+         <td>${activity.FreePlaces}</td>
+         <td>
+            <a href="/Admin/Activities/edit?id=${activity.Id}" class="btn btn-primary btn-mini">Bewerken</a>
+            <% if CurrentUser.IsInRole("Admin") : %>
+            <a href="/Admin/Activities/delete?id=${activity.Id}" class="btn btn-danger btn-mini delete-button">Verwijderen</a>
+            <% end %>
+            <a href="/Admin/ActivityEnrolments/index?activity=${activity.Id}" class="btn btn-mini">Inschrijvingen</a>
+            <a href="/Admin/Activities/csv?id=${activity.Id}" class="btn btn-warning btn-mini">CSV downloaden</a>
+         </td>
+      </tr>
+      <% end %>
+   </tbody>
+</table>
+
+<div class="form-actions">
+   <% if CurrentUser.IsInRole("Admin") : %>
+   <a href="/Admin/Activities/new" class="btn btn-success">Nieuw</a>
+   <% end %>
+</div>

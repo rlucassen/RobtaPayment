@@ -1,0 +1,82 @@
+﻿
+<% if ?enrolment: %>
+  <h1>Inschrijven voor intaketoetsen</h1>
+  <form action="/exam/payment" class="form-horizontal" method="post">
+	  <fieldset>
+      <legend>Gegevens</legend>
+	    <div class="control-group">
+	      ${Form.LabelFor("enrolment.Exam", "Toets", {"class":"control-label"})}
+	      <div class="controls">
+	        <% if exams.Count > 0: %>
+	        ${Form.Select("enrolment.Exam.Id", exams, {"value":"Id", "text":"Name"})}
+	        <% else: %>
+	        Er zijn momenteel geen toetsen waar je je op kunt inschrijven
+	        <% end %>
+	      </div>
+	    </div>
+	    <% test = "" %>
+	    <% for exam in exams:
+	    if exam.Amn:
+        test += exam.Id+" ";
+      end
+	    end
+	    %>
+	    <div id="education" class="control-group ${test}">
+        ${Form.LabelFor("enrolment.Education", "Opleiding", {"class":"control-label"})}
+        <div class="controls">
+          ${Form.Select("enrolment.Education.Id", educations, {"value":"Id", "text":"Name", "firstoption":""})}
+        </div>
+      </div>
+		  <div class="control-group">
+			  ${Form.LabelFor("enrolment.StudentNumber", "Aanmeldnummer indien bekend", {"class":"control-label"})}
+			  <div class="controls">
+				  ${Form.TextField("enrolment.StudentNumber", {"class":"input-xlarge"})}
+			  </div>
+		  </div>
+		  <div class="control-group">
+			  ${Form.LabelFor("enrolment.Name", "Voornaam student", {"class":"control-label"})}
+			  <div class="controls">
+				  ${Form.TextField("enrolment.Name", {"class":"input-xlarge"})}
+			  </div>
+		  </div>
+		  <div class="control-group">
+			  ${Form.LabelFor("enrolment.Preposition", "Tussenvoegsel student", {"class":"control-label"})}
+			  <div class="controls">
+				  ${Form.TextField("enrolment.Preposition", {"class":"input-xlarge"})}
+			  </div>
+		  </div>
+		  <div class="control-group">
+			  ${Form.LabelFor("enrolment.Lastname", "Achternaam student", {"class":"control-label"})}
+			  <div class="controls">
+			      ${Form.TextField("enrolment.Lastname", {"class":"input-xlarge"})}
+			  </div>
+		  </div>
+		  <div class="control-group">
+			  ${Form.LabelFor("enrolment.Address", "Adres student", {"class":"control-label"})}
+			  <div class="controls">
+				  ${Form.TextField("enrolment.Address", {"class":"input-xlarge"})}
+			  </div>
+		  </div>
+		  <div class="control-group">
+			  ${Form.LabelFor("enrolment.Place", "Postcode en Woonplaats student", {"class":"control-label"})}
+			  <div class="controls">
+				  ${Form.TextField("enrolment.Place", {"class":"input-xlarge"})}
+			  </div>
+		  </div>
+		  <div class="control-group">
+			  ${Form.LabelFor("enrolment.Email", "Email", {"class":"control-label"})}
+			  <div class="controls">
+				  ${Form.TextField("enrolment.Email", {"class":"input-xlarge"})}
+			  </div>
+		  </div>
+		  <div class="form-actions">
+			  ${Form.Submit("Betalen", {@class:'btn btn-primary'})}
+        <a href="index" class="btn">Annuleren</a>
+      </div>
+	  </fieldset>
+  </form>
+<% else: %>
+	<div class="form-actions">
+    <a href="/Exam/index" class="btn">Annuleren</a>
+  </div>
+<% end %>

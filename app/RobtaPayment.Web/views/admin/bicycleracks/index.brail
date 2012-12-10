@@ -1,0 +1,28 @@
+﻿<h1>Fietsenrekken beheren</h1>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Fietsenrek</th>
+			<th>Plaatsen</th>
+			<th>Acties</th>
+		</tr>
+	</thead>
+	<tbody>
+    <% for rack in racks: %>
+		<tr>
+			<td>${rack.Name}</td>
+			<td>${rack.Places}</td>
+		   <td>
+		      <a href="/Admin/BicycleRacks/edit?id=${rack.Id}" class="btn btn-primary btn-mini">Bewerken</a>
+		      <% if CurrentUser.IsInRole("Admin") : %>
+		      <a href="/Admin/BicycleRacks/delete?id=${rack.Id}" class="btn btn-danger btn-mini delete-button">Verwijderen</a>
+            <% end %>                  
+		   </td>
+		</tr>
+    <% end %>
+	</tbody>
+</table>
+
+<!--div class="form-actions">
+    <a href="/Admin/BicycleRacks/new" class="btn btn-success">Nieuw</a>
+</div-->

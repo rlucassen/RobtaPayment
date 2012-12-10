@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{127835FA-10DA-4B70-AE74-168CCC3DEFF2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RobtaPayment.Web</RootNamespace>
+    <AssemblyName>RobtaPayment.Web</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <TargetFrameworkProfile />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Boo.Lang">
+      <HintPath>..\..\lib\Castle.MonoRail-2.0.0\bin\Boo.Lang.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Parser">
+      <HintPath>..\..\lib\Castle.MonoRail-2.0.0\bin\Boo.Lang.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.ActiveRecord, Version=2.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Castle.Facilities.ActiveRecordIntegration-1.1.0\bin\Castle.ActiveRecord.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Components.Validator, Version=1.1.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Castle.Facilities.ActiveRecordIntegration-1.1.0\bin\Castle.Components.Validator.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=1.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Castle.Facilities.ActiveRecordIntegration-1.1.0\bin\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.ActiveRecordIntegration">
+      <HintPath>..\..\lib\Castle.Facilities.ActiveRecordIntegration-1.1.0\bin\Castle.Facilities.ActiveRecordIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.AutoTx">
+      <HintPath>..\..\lib\Castle.Facilities.ActiveRecordIntegration-1.1.0\bin\Castle.Facilities.AutoTx.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.Logging">
+      <HintPath>..\..\lib\Castle.MonoRail-2.0.0\bin\Castle.Facilities.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MicroKernel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Castle.Facilities.ActiveRecordIntegration-1.1.0\bin\Castle.MicroKernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MonoRail.ActiveRecordSupport">
+      <HintPath>..\..\lib\Castle.MonoRail-2.0.0\bin\Castle.MonoRail.ActiveRecordSupport.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MonoRail.Framework">
+      <HintPath>..\..\lib\Castle.MonoRail-2.0.0\bin\Castle.MonoRail.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MonoRail.Views.Brail">
+      <HintPath>..\..\lib\Castle.MonoRail-2.0.0\bin\Castle.MonoRail.Views.Brail.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MonoRail.WindsorExtension">
+      <HintPath>..\..\lib\Castle.MonoRail-2.0.0\bin\Castle.MonoRail.WindsorExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Services.Logging.log4netIntegration">
+      <HintPath>..\..\lib\Castle.MonoRail-2.0.0\bin\Castle.Services.Logging.log4netIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Services.Transaction, Version=2.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Castle.Facilities.ActiveRecordIntegration-1.1.0\bin\Castle.Services.Transaction.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=2.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Castle.Facilities.ActiveRecordIntegration-1.1.0\bin\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\lib\Castle.MonoRail-2.0.0\bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Mollie.iDEAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Mollie.iDEAL.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Castle.Facilities.ActiveRecordIntegration-1.1.0\bin\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Castle.Facilities.ActiveRecordIntegration-1.1.0\bin\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="content\images\glyphicons-halflings-white.png" />
+    <Content Include="content\images\glyphicons-halflings.png" />
+    <Content Include="content\javascript\application.js" />
+    <Content Include="content\javascript\bootstrap-datepicker.js" />
+    <Content Include="content\javascript\bootstrap.min.js" />
+    <Content Include="content\javascript\jquery-1.7.1.min.js" />
+    <Content Include="content\javascript\jquery.tablesorter.min.js" />
+    <Content Include="content\styles\bootstrap-responsive.min.css" />
+    <Content Include="content\styles\bootstrap.min.css" />
+    <Content Include="content\styles\style.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="controllers\admin\BuildingsController.cs" />
+    <Compile Include="controllers\admin\BicycleRackEnrolmentsController.cs" />
+    <Compile Include="controllers\admin\BicycleRacksController.cs" />
+    <Compile Include="controllers\admin\ContributionsController.cs" />
+    <Compile Include="controllers\admin\ContributionEnrolmentsController.cs" />
+    <Compile Include="controllers\admin\EducationsController.cs" />
+    <Compile Include="controllers\admin\ExamEnrolmentsController.cs" />
+    <Compile Include="controllers\admin\ExamsController.cs" />
+    <Compile Include="controllers\admin\ExportController.cs" />
+    <Compile Include="controllers\admin\LockerBlocksController.cs" />
+    <Compile Include="controllers\admin\LockerEnrolmentsController.cs" />
+    <Compile Include="controllers\admin\LockersController.cs" />
+    <Compile Include="controllers\admin\SchoolYearsController.cs" />
+    <Compile Include="controllers\ActivityController.cs" />
+    <Compile Include="controllers\admin\StringFieldController.cs" />
+    <Compile Include="controllers\BicycleController.cs" />
+    <Compile Include="controllers\ContributionController.cs" />
+    <Compile Include="controllers\ExamController.cs" />
+    <Compile Include="controllers\HomeController.cs" />
+    <Compile Include="controllers\admin\ActivitiesController.cs" />
+    <Compile Include="controllers\admin\AuthenticationController.cs" />
+    <Compile Include="controllers\admin\ActivityEnrolmentsController.cs" />
+    <Compile Include="controllers\ControllerBase.cs" />
+    <Compile Include="controllers\DevelopmentController.cs" />
+    <Compile Include="controllers\IdealController.cs" />
+    <Compile Include="controllers\LockerController.cs" />
+    <Compile Include="controllers\SecureController.cs" />
+    <Compile Include="filters\AuthenticationFilter.cs" />
+    <Compile Include="helpers\GlrAuthorizationAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GLRContainer.cs" />
+    <Compile Include="helpers\AuthenticationHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RobtaPayment.Model\RobtaPayment.Model.csproj">
+      <Project>{974c76c3-5230-4323-ba05-b0238ff03950}</Project>
+      <Name>RobtaPayment.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="castle.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="content\fonts\CaeciliaLTStd-Heavy.ttf" />
+    <Content Include="log4net.config" />
+    <None Include="views\admin\activityenrolments\new.brail" />
+    <None Include="views\admin\bicyclerackenrolments\new.brail" />
+    <None Include="views\admin\buildings\edit.brail" />
+    <None Include="views\admin\buildings\index.brail" />
+    <None Include="views\admin\buildings\new.brail" />
+    <None Include="views\admin\buildings\_building.brail">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="views\admin\bicycleracks\edit.brail" />
+    <None Include="views\admin\bicycleracks\index.brail" />
+    <None Include="views\admin\bicycleracks\new.brail" />
+    <None Include="views\admin\bicycleracks\_bicyclerack.brail">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="views\admin\bicyclerackenrolments\edit.brail" />
+    <None Include="views\admin\bicyclerackenrolments\index.brail">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="views\admin\bicyclerackenrolments\_enrolment.brail">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="views\admin\contributions\edit.brail" />
+    <None Include="views\admin\contributions\index.brail">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="views\admin\contributions\new.brail" />
+    <None Include="views\admin\contributions\_contribution.brail">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="views\admin\contributionenrolments\edit.brail" />
+    <None Include="views\admin\contributionenrolments\index.brail">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="views\admin\contributionenrolments\new.brail" />
+    <None Include="views\admin\contributionenrolments\_enrolment.brail" />
+    <None Include="views\admin\educations\edit.brail" />
+    <None Include="views\admin\educations\index.brail" />
+    <None Include="views\admin\educations\new.brail" />
+    <None Include="views\admin\educations\_education.brail">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="views\admin\examenrolments\edit.brail" />
+    <None Include="views\admin\examenrolments\index.brail">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="views\admin\examenrolments\new.brail" />
+    <None Include="views\admin\examenrolments\_enrolment.brail">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="views\admin\exams\edit.brail" />
+    <None Include="views\admin\exams\index.brail" />
+    <None Include="views\admin\exams\new.brail" />
+    <None Include="views\admin\exams\presence.brail" />
+    <None Include="views\admin\exams\_exam.brail">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="views\admin\export\index.brail" />
+    <None Include="views\admin\lockerblocks\edit.brail" />
+    <None Include="views\admin\lockerblocks\index.brail" />
+    <None Include="views\admin\lockerblocks\new.brail" />
+    <None Include="views\admin\lockerblocks\_lockerblock.brail">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="views\admin\lockerenrolments\index.brail">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="views\admin\lockers\view.brail" />
+    <None Include="views\admin\lockers\index.brail" />
+    <None Include="views\admin\schoolyears\edit.brail" />
+    <None Include="views\admin\schoolyears\index.brail" />
+    <None Include="views\admin\schoolyears\new.brail" />
+    <None Include="views\admin\schoolyears\_schoolyear.brail">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="views\activity\enrol.brail" />
+    <None Include="views\activity\index.brail">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="views\activity\payment.brail" />
+    <None Include="views\bicycle\enrol.brail" />
+    <None Include="views\bicycle\index.brail">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="views\bicycle\payment.brail" />
+    <None Include="views\contribution\index.brail" />
+    <None Include="views\contribution\payment.brail" />
+    <None Include="views\exam\index.brail">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="views\exam\payment.brail" />
+    <None Include="views\ideal\error.brail" />
+    <None Include="views\home\index.brail">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="views\admin\activities\edit.brail" />
+    <None Include="views\admin\activities\index.brail" />
+    <None Include="views\admin\activities\new.brail" />
+    <None Include="views\admin\activities\_activity.brail">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="views\admin\authentication\index.brail" />
+    <None Include="views\admin\activityenrolments\edit.brail" />
+    <None Include="views\admin\activityenrolments\index.brail">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="views\admin\activityenrolments\_enrolment.brail" />
+    <None Include="views\ideal\success.brail" />
+    <None Include="views\ideal\toolate.brail" />
+    <None Include="views\layouts\default.brail" />
+    <None Include="views\locker\renewal.brail" />
+    <None Include="views\locker\enrol.brail" />
+    <None Include="views\locker\index.brail" />
+    <None Include="views\locker\lockerblock.brail" />
+    <None Include="views\locker\payment.brail" />
+    <None Include="views\mail\confirmation_ActivityEnrolment.brail" />
+    <None Include="views\mail\confirmation_LockerEnrolment.brail" />
+    <None Include="views\mail\confirmation_BicycleRackEnrolment.brail" />
+    <None Include="views\mail\confirmation_ContributionEnrolment.brail" />
+    <None Include="views\mail\inactiveenrolment.brail" />
+    <None Include="views\pdf\ContributionInvoice.brail" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60054</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60054/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://webmail.auxilium.nl:60054</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

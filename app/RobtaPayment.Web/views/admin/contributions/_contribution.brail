@@ -1,0 +1,20 @@
+﻿<div class="control-group">
+   ${Form.LabelFor("contribution.Price", "Bedrag", {"class":"control-label"})}
+   <div class="controls">
+      <div class="input-prepend">
+         <span class="add-on">&euro;</span>
+         ${Form.TextField("contribution.Price", {"class":"input-xlarge"})}
+      </div>
+      <!--p class="help-block">Supporting help text</p-->
+   </div>
+</div>
+<div class="control-group">
+	${Form.LabelFor("contribution.ContributionType", "Opleiding", {"class":"control-label"})}
+	<div class="controls">
+    <div class="input-prepend">
+      <span class="add-on"></span>
+          ${Form.Select("contribution.ContributionType", contributionTypes, {"value":"Key", "text":"Value"})}<br/>
+    </div>
+		<!--p class="help-block">Supporting help text</p-->
+	</div>
+</div>

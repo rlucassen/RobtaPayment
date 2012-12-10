@@ -1,0 +1,37 @@
+﻿<% if ?enrolment: %>
+<h1>Kluisje ${locker.Number} verlengen</h1>
+<p>Je staat op het punt kluisje nummer <strong>${locker.Number}</strong> op locatie <strong>${locker.LockerBlock.Building.Name}</strong> te 
+  verlengen voor schooljaar <strong>${enrolment.SchoolYear.Name}</strong> met de volgende gegevens:</p>
+<p>
+  Naam: <strong>${enrolment.Name}</strong><br/>
+  Studentnummer: <strong>${enrolment.StudentNumber}</strong><br/>
+  Kluisje: <strong>${enrolment.Locker.Name}</strong><br/>
+  Schooljaar: <strong>${enrolment.SchoolYear.Name}</strong><br/>
+  Periode: <strong>${enrolment.SchoolYear.FriendlyPeriod}</strong>
+</p>
+<p>Je betaalt hiervoor een bedrag van <strong>&euro; ${transaction.Amount.ToString("0.00")}</strong></p>
+<form action="/Ideal/pay" class="form-horizontal" method="post">
+  <input type="hidden" name="transaction.Id" value="${transaction.Id}"/>
+  <fieldset>
+    <legend>Kies je bank</legend>
+    <div class="control-group">
+      ${Form.LabelFor("transaction.BankId", "Bank", {"class":"control-label"})}
+      <div class="controls">
+        <select name="transaction.BankId" class="contentselector" style="float: none;">
+          <% for bank in banks: %>
+          <option value="${bank.Id}">${bank.Name}</option>
+          <% end %>
+        </select>
+      </div>
+    </div>
+    <div class="form-actions">
+      <input class="btn" type="submit" value="Betalen"/>
+    </div>
+  </fieldset>
+</form>
+<% else: %>
+<p>Het is niet mogelijk dit kluisje te verlengen.</p>
+<% end %>
+
+
+

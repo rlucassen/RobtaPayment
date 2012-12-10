@@ -1,0 +1,12 @@
+﻿<h2>Nieuwe bijdrage</h2>
+<div id="form">
+  ${Form.FormTag({@action: 'Create', "immediate":'true', "useLabels":'true', "class":'form-horizontal'})}
+  <fieldset>
+	<%OutputSubView("_contribution") %>
+	<div class="form-actions">
+    ${Form.Submit("Bijdrage opslaan", {@class:'btn btn-primary'})}
+    <a href="index" class="btn">Annuleren</a>
+  </div>
+  </fieldset>
+${Form.EndFormTag()}
+</div>

@@ -1,0 +1,22 @@
+﻿<h1>Kluizen beheren</h1>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Kluisnummer</th>
+			<th>Kluizenblok</th>
+			<th>Gebouw</th>
+		</tr>
+	</thead>
+	<tbody>
+    <% for locker in lockers: %>
+		<tr>
+			<td>${locker.Number}</td>
+			<td>${locker.LockerBlock.Name}</td>
+			<td>${locker.LockerBlock.Building.Name}</td>
+			<td>
+				<a href="/Admin/Lockers/view?id=${locker.Id}" class="btn btn-primary btn-mini">Openen</a>
+      </td>
+		</tr>
+    <% end %>
+	</tbody>
+</table>

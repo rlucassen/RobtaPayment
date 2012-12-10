@@ -1,0 +1,44 @@
+﻿<h1>Inschrijvingen voor kluisjes</h1>
+<form class="well form-search">
+  <% if string.IsNullOrEmpty(query) == false: %>
+	<p>Je hebt gezocht op: "<strong>${query}</strong>"</p>
+  <% end %>
+  <p>
+    ${Form.Select("schoolyear", schoolyears, {"value":"Id", "text":"Name"})}<br/>
+  </p>
+  <input name="query" id="query" type="text" class="input-medium search-query" value="${query}">
+  <button type="submit" class="btn">Search</button>
+  <p class="help-block">Je kunt zoeken op (delen van een) naam of studentnummer</p>
+</form>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Schooljaar</th>
+      <th>Kluisje</th>
+      <th>Naam</th>
+      <th>Email</th>
+      <th>Studentnummer</th>
+      <th>Datum</th>
+      <th>Betaald</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for enrolment in enrolments: %>
+    <tr>
+      <td>${enrolment.SchoolYear.Name}</td>
+      <td><a href="/Admin/Lockers/view?id=${enrolment.Locker.Id}">${enrolment.Locker.Name}</a></td>
+      <td>${enrolment.Name}</td>
+      <td>${enrolment.Email}</td>
+      <td>${enrolment.StudentNumber}</td>
+      <td>${enrolment.EnrolmentDate.ToString("yyyy-MM-dd")}</td>
+      <td>
+        <% if enrolment.Transaction != null and enrolment.Transaction.Payed: %>
+          <span class="label label-success">Betaald</span>
+        <% else: %>
+          <span class="label label-important">Niet betaald</span>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

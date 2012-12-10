@@ -1,0 +1,21 @@
+﻿<h1>${lockerblock.Name}</h1>
+<p>Beschikbaarheid van kluisjes voor het huidige schooljaar.</strong></p>
+<table class="table-chessed table-bordered table-lockers">
+  <tbody>
+    <% for row in (1, 2, 3, 4, 5): %>
+    <tr>
+      <% for locker in lockerblock.LockerRow(row): %>
+      <td>
+        <span>${locker.Number}</span>
+        <br/>
+        <% if locker.IsFree(schoolyear): %>
+          <a href="/Locker/Enrol?locker=${locker.Id}" class="btn btn-mini btn-success">Huren</a>
+        <% else: %>
+          <a href="/Locker/Enrol?locker=${locker.Id}" class="btn btn-mini btn-danger">Bezet</a>
+        <% end %>
+      </td>
+      <% end %>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
