@@ -57,32 +57,6 @@
 
         private string GetMollieDescription(IEnrolment enrolment)
         {
-            if(enrolment is ExamEnrolment)
-            {
-                ExamEnrolment examEnrolment = (ExamEnrolment) enrolment;
-                if (examEnrolment.StudentNumber != "0")
-                {
-                    return string.Format("{0}/{1}/{2}", examEnrolment.Exam.Name, examEnrolment.StudentNumber,
-                                         examEnrolment.FullName);
-                }
-                return string.Format("{0}/{1}", examEnrolment.Exam.Name, examEnrolment.FullName);
-            }
-            if(enrolment is LockerEnrolment)
-            {
-                LockerEnrolment lockerEnrolment = (LockerEnrolment) enrolment;
-                return string.Format("{0}/{1}/{2}", lockerEnrolment.StudentNumber, lockerEnrolment.Locker.Number,
-                                     enrolment.Name);
-            }
-            if(enrolment is BicycleRackEnrolment)
-            {
-                return string.Format("{0}/{1}", enrolment.StudentNumber, enrolment.Name);
-            }
-            if(enrolment is ActivityEnrolment)
-            {
-                ActivityEnrolment activityEnrolment = (ActivityEnrolment) enrolment;
-                return string.Format("{0}/{1}/{2}", activityEnrolment.StudentNumber,
-                                     activityEnrolment.Activity.Name.Substring(0, 10), activityEnrolment.Name);
-            }
             return string.Format("{0}/onbekend/{1}", enrolment.StudentNumber, enrolment.Name);
         }
 
@@ -190,24 +164,6 @@
                 message.To.Add(new MailAddress(enrolment.Email));
                 message.From = new MailAddress(ConfigurationManager.AppSettings["ConfirmationFromAddress"]);
 
-                if (enrolment.GetType() == typeof(LockerEnrolment))
-                {
-                    message.CC.Add(new MailAddress(ConfigurationManager.AppSettings["RobtaPaymentAdministrationEmail"]));
-                }
-                if (enrolment.GetType() == typeof(ContributionEnrolment))
-                {
-                    Dictionary<string, object> objects = new Dictionary<string, object>();
-
-                    objects.Add("transaction", transaction);
-                    objects.Add("enrolment", enrolment);
-                    objects.Add("cssFile", Path.Combine(HttpContext.Server.MapPath(@"\content\styles"), "style.css"));
-
-                    message.Attachments.Add(
-                        new Attachment(
-                            InvoiceHelper.GetInvoice("ContributionInvoice",
-                                                     objects),
-                            "test.pdf"));
-                }
 
                 DeliverEmail(message);
             }

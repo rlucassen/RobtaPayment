@@ -149,32 +149,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="controllers\admin\BuildingsController.cs" />
-    <Compile Include="controllers\admin\BicycleRackEnrolmentsController.cs" />
-    <Compile Include="controllers\admin\BicycleRacksController.cs" />
-    <Compile Include="controllers\admin\ContributionsController.cs" />
-    <Compile Include="controllers\admin\ContributionEnrolmentsController.cs" />
-    <Compile Include="controllers\admin\EducationsController.cs" />
-    <Compile Include="controllers\admin\ExamEnrolmentsController.cs" />
-    <Compile Include="controllers\admin\ExamsController.cs" />
-    <Compile Include="controllers\admin\ExportController.cs" />
-    <Compile Include="controllers\admin\LockerBlocksController.cs" />
-    <Compile Include="controllers\admin\LockerEnrolmentsController.cs" />
-    <Compile Include="controllers\admin\LockersController.cs" />
-    <Compile Include="controllers\admin\SchoolYearsController.cs" />
-    <Compile Include="controllers\ActivityController.cs" />
     <Compile Include="controllers\admin\StringFieldController.cs" />
-    <Compile Include="controllers\BicycleController.cs" />
-    <Compile Include="controllers\ContributionController.cs" />
-    <Compile Include="controllers\ExamController.cs" />
     <Compile Include="controllers\HomeController.cs" />
-    <Compile Include="controllers\admin\ActivitiesController.cs" />
     <Compile Include="controllers\admin\AuthenticationController.cs" />
-    <Compile Include="controllers\admin\ActivityEnrolmentsController.cs" />
     <Compile Include="controllers\ControllerBase.cs" />
     <Compile Include="controllers\DevelopmentController.cs" />
     <Compile Include="controllers\IdealController.cs" />
-    <Compile Include="controllers\LockerController.cs" />
     <Compile Include="controllers\SecureController.cs" />
     <Compile Include="filters\AuthenticationFilter.cs" />
     <Compile Include="helpers\GlrAuthorizationAttribute.cs" />
@@ -199,126 +179,19 @@
   <ItemGroup>
     <None Include="content\fonts\CaeciliaLTStd-Heavy.ttf" />
     <Content Include="log4net.config" />
-    <None Include="views\admin\activityenrolments\new.brail" />
-    <None Include="views\admin\bicyclerackenrolments\new.brail" />
-    <None Include="views\admin\buildings\edit.brail" />
-    <None Include="views\admin\buildings\index.brail" />
-    <None Include="views\admin\buildings\new.brail" />
-    <None Include="views\admin\buildings\_building.brail">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="views\admin\bicycleracks\edit.brail" />
-    <None Include="views\admin\bicycleracks\index.brail" />
-    <None Include="views\admin\bicycleracks\new.brail" />
-    <None Include="views\admin\bicycleracks\_bicyclerack.brail">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="views\admin\bicyclerackenrolments\edit.brail" />
-    <None Include="views\admin\bicyclerackenrolments\index.brail">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="views\admin\bicyclerackenrolments\_enrolment.brail">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="views\admin\contributions\edit.brail" />
-    <None Include="views\admin\contributions\index.brail">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="views\admin\contributions\new.brail" />
-    <None Include="views\admin\contributions\_contribution.brail">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="views\admin\contributionenrolments\edit.brail" />
-    <None Include="views\admin\contributionenrolments\index.brail">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="views\admin\contributionenrolments\new.brail" />
-    <None Include="views\admin\contributionenrolments\_enrolment.brail" />
-    <None Include="views\admin\educations\edit.brail" />
-    <None Include="views\admin\educations\index.brail" />
-    <None Include="views\admin\educations\new.brail" />
-    <None Include="views\admin\educations\_education.brail">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="views\admin\examenrolments\edit.brail" />
-    <None Include="views\admin\examenrolments\index.brail">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="views\admin\examenrolments\new.brail" />
-    <None Include="views\admin\examenrolments\_enrolment.brail">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="views\admin\exams\edit.brail" />
-    <None Include="views\admin\exams\index.brail" />
-    <None Include="views\admin\exams\new.brail" />
-    <None Include="views\admin\exams\presence.brail" />
-    <None Include="views\admin\exams\_exam.brail">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="views\admin\export\index.brail" />
-    <None Include="views\admin\lockerblocks\edit.brail" />
-    <None Include="views\admin\lockerblocks\index.brail" />
-    <None Include="views\admin\lockerblocks\new.brail" />
-    <None Include="views\admin\lockerblocks\_lockerblock.brail">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="views\admin\lockerenrolments\index.brail">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="views\admin\lockers\view.brail" />
-    <None Include="views\admin\lockers\index.brail" />
-    <None Include="views\admin\schoolyears\edit.brail" />
-    <None Include="views\admin\schoolyears\index.brail" />
-    <None Include="views\admin\schoolyears\new.brail" />
-    <None Include="views\admin\schoolyears\_schoolyear.brail">
-      <SubType>Designer</SubType>
-    </None>
+    <Content Include="views\admin\authentication\index.brail" />
     <None Include="views\activity\enrol.brail" />
     <None Include="views\activity\index.brail">
       <SubType>Designer</SubType>
     </None>
     <None Include="views\activity\payment.brail" />
-    <None Include="views\bicycle\enrol.brail" />
-    <None Include="views\bicycle\index.brail">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="views\bicycle\payment.brail" />
-    <None Include="views\contribution\index.brail" />
-    <None Include="views\contribution\payment.brail" />
-    <None Include="views\exam\index.brail">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="views\exam\payment.brail" />
     <None Include="views\ideal\error.brail" />
     <None Include="views\home\index.brail">
       <SubType>Designer</SubType>
     </None>
-    <None Include="views\admin\activities\edit.brail" />
-    <None Include="views\admin\activities\index.brail" />
-    <None Include="views\admin\activities\new.brail" />
-    <None Include="views\admin\activities\_activity.brail">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="views\admin\authentication\index.brail" />
-    <None Include="views\admin\activityenrolments\edit.brail" />
-    <None Include="views\admin\activityenrolments\index.brail">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="views\admin\activityenrolments\_enrolment.brail" />
     <None Include="views\ideal\success.brail" />
     <None Include="views\ideal\toolate.brail" />
     <None Include="views\layouts\default.brail" />
-    <None Include="views\locker\renewal.brail" />
-    <None Include="views\locker\enrol.brail" />
-    <None Include="views\locker\index.brail" />
-    <None Include="views\locker\lockerblock.brail" />
-    <None Include="views\locker\payment.brail" />
-    <None Include="views\mail\confirmation_ActivityEnrolment.brail" />
-    <None Include="views\mail\confirmation_LockerEnrolment.brail" />
-    <None Include="views\mail\confirmation_BicycleRackEnrolment.brail" />
-    <None Include="views\mail\confirmation_ContributionEnrolment.brail" />
-    <None Include="views\mail\inactiveenrolment.brail" />
-    <None Include="views\pdf\ContributionInvoice.brail" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

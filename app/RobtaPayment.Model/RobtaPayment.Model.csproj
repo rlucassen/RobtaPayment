@@ -58,34 +58,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Activity.cs" />
-    <Compile Include="Entities\ActivityEnrolment.cs" />
-    <Compile Include="Entities\Building.cs" />
-    <Compile Include="Entities\BicycleRack.cs" />
-    <Compile Include="Entities\BicycleRackEnrolment.cs" />
-    <Compile Include="Entities\ContributionEnrolment.cs" />
-    <Compile Include="Entities\Contribution.cs" />
-    <Compile Include="Entities\Education.cs" />
-    <Compile Include="Entities\Exam.cs" />
-    <Compile Include="Entities\ExamEnrolment.cs" />
     <Compile Include="Entities\Fields\Field.cs" />
     <Compile Include="Entities\Fields\StringField.cs" />
     <Compile Include="Entities\Project.cs" />
-    <Compile Include="Enums\ContributionType.cs" />
     <Compile Include="Entities\Enrolment.cs" />
     <Compile Include="Entities\IEnrolment.cs" />
-    <Compile Include="Entities\Locker.cs" />
-    <Compile Include="Entities\LockerBlock.cs" />
-    <Compile Include="Entities\LockerEnrolment.cs" />
     <Compile Include="Entities\ModelBase.cs" />
-    <Compile Include="Entities\SchoolYear.cs" />
     <Compile Include="Entities\Transaction.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Enums\AccountType.cs" />
-    <Compile Include="Enums\BicycleRackEnrolmentStatus.cs" />
-    <Compile Include="Helpers\CsvHelper.cs" />
-    <Compile Include="Helpers\ContributionTypeTranslator.cs" />
-    <Compile Include="Helpers\InvoiceHelper.cs" />
     <Compile Include="Interfaces\ITransaction.cs" />
     <Compile Include="Helpers\MollieIdealHelper.cs" />
     <Compile Include="Helpers\PasswordHelper.cs" />

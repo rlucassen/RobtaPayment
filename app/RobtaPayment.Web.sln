@@ -1,13 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sRobtaPayment.Web", "RobtaPayment.Web\RobtaPayment.Web.csproj", "{127835FA-10DA-4B70-AE74-168CCC3DEFF2}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobtaPayment.Web", "RobtaPayment.Web\RobtaPayment.Web.csproj", "{127835FA-10DA-4B70-AE74-168CCC3DEFF2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobtaPayment.Model", "RobtaPayment.Model\RobtaPayment.Model.csproj", "{974C76C3-5230-4323-BA05-B0238FF03950}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobtaPayment.Tests", "RobtaPayment.Tests\RobtaPayment.Tests.csproj", "{43DC89DF-7133-4FB7-A3EE-D2CE279226EF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobtaPayment.EnrolmentsCleaner", "RobtaPayment.EnrolmentsCleaner\RobtaPayment.EnrolmentsCleaner.csproj", "{F1986ACE-EE91-4358-8D02-924AB9A834D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,16 +47,6 @@ Global
 		{43DC89DF-7133-4FB7-A3EE-D2CE279226EF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{43DC89DF-7133-4FB7-A3EE-D2CE279226EF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{43DC89DF-7133-4FB7-A3EE-D2CE279226EF}.Release|x86.ActiveCfg = Release|Any CPU
-		{F1986ACE-EE91-4358-8D02-924AB9A834D3}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{F1986ACE-EE91-4358-8D02-924AB9A834D3}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{F1986ACE-EE91-4358-8D02-924AB9A834D3}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{F1986ACE-EE91-4358-8D02-924AB9A834D3}.Debug|x86.ActiveCfg = Debug|x86
-		{F1986ACE-EE91-4358-8D02-924AB9A834D3}.Debug|x86.Build.0 = Debug|x86
-		{F1986ACE-EE91-4358-8D02-924AB9A834D3}.Release|Any CPU.ActiveCfg = Release|x86
-		{F1986ACE-EE91-4358-8D02-924AB9A834D3}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{F1986ACE-EE91-4358-8D02-924AB9A834D3}.Release|Mixed Platforms.Build.0 = Release|x86
-		{F1986ACE-EE91-4358-8D02-924AB9A834D3}.Release|x86.ActiveCfg = Release|x86
-		{F1986ACE-EE91-4358-8D02-924AB9A834D3}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

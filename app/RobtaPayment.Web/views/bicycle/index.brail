@@ -1,7 +1,0 @@
-﻿<h1>Een plek in de fietsenstalling</h1>
-<% if rack.IsOpen: %>
-<p>Er zijn nog <strong>${rack.FreePlaces}</strong> plekken vrij in de fietsenstalling.</p>
-<p><a href="/Bicycle/enrol" class="btn btn-success">Huur een plek</a></p>
-<% else: %>
-<p>Er zijn geen plekken meer vrij in de fietsenstalling.</p>
-<% end %>

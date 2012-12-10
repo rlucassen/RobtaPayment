@@ -62,16 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActivityTests.cs" />
-    <Compile Include="BicycleRackEnrolmentTests.cs" />
-    <Compile Include="BicycleRackTests.cs" />
-    <Compile Include="BuildingTests.cs" />
-    <Compile Include="SchoolYearTests.cs" />
-    <Compile Include="LockerTests.cs" />
-    <Compile Include="LockerBlockTests.cs" />
-    <Compile Include="EnrolmentTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

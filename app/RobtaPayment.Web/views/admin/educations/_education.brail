@@ -1,6 +1,0 @@
-﻿<div class="control-group">
-	${Form.LabelFor("education.Name", "Naam", {"class":"control-label"})}
-	<div class="controls">
-    ${Form.TextField("education.Name", {"class":"input-xlarge"})}
-  </div>
-</div>
