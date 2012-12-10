@@ -7,18 +7,34 @@ using Castle.ActiveRecord;
 namespace RobtaPayment.Model.Entities.Fields
 {
     [ActiveRecord]
-    public abstract class Field : ModelBase<Field>
+    public abstract class Field<T> : ModelBase<T> where T : Field<T>
     {
+        public Field()
+        {
+            Page = 1;
+            IncludeAutoInfo = true;
+        }
+            
         [Property]
         public virtual string Name { get; set; }
 
         [BelongsTo]
         public virtual Project Project { get; set; }
 
-        public abstract string StringValue { get; }
+        [Property]
+        public virtual int Page { get; set; }
+
+        [Property]
+        public virtual string Info { get; set; }
+
+        [Property]
+        public virtual bool IncludeAutoInfo { get; set; }
+
+        [Property]
+        public virtual int RankOrder { get; set; }
 
         public abstract string FieldHtml { get; }
 
-        public abstract bool IsValid();
+        public abstract string AutoInfo { get; }
     }
 }
